@@ -1,0 +1,30 @@
+
+### Request 1: Postive sentiment
+### Response
+### Status Code: 201
+### Body: JSON object for the newly created exercise. Must be an object, not an array
+POST http://localhost:3002/analyze HTTP/1.1
+content-type: application/json
+
+{
+    "text": "Scientists have unveiled a revolutionary vaccine that is not only safe and effective but promises to save millions of lives worldwide, heralding a new era of hope and progress for humanity."
+}
+
+
+### Request 2: Negative sentiment
+### Response
+POST http://localhost:3002/analyze HTTP/1.1
+content-type: application/json
+
+{
+   "text": "A devastating wildfire swept through a residential area last night, destroying dozens of homes and leaving hundreds of families displaced."
+}
+
+### Request 3: Neutral sentiment
+### Response
+POST http://localhost:3002/analyze HTTP/1.1
+content-type: application/json
+
+{
+  "text":  "The city council convened this morning to discuss proposed changes to local zoning laws, with plans to vote on the amendments next week."
+}
