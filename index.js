@@ -1,11 +1,18 @@
 import express from "express";
 import bodyParser from "body-parser";
 import Sentiment from "sentiment";
+import cors from "cors";
 
 const app = express();
 const port = 3002;
 const sentiment = new Sentiment();
+const corsOrigin = {
+  origin: "http://localhost:5173", //port for frontend to ensure only frontend can access
+  credentials: true,
+  optionSuccessStatus: 200,
+};
 
+app.use(cors(corsOrigin));
 app.use(express.json());
 
 app.post("/analyze", (req, res) => {
